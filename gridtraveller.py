@@ -8,7 +8,7 @@ def gridtraveller(m, n):
 
 
 # with memoization
-def gridtraveller_on_drugs1(m,n, memo={}):
+def gridtraveller_on_drugs(m,n, memo={}):
     if (m, n) in memo:
         return memo[(m,n)]
     
@@ -17,7 +17,7 @@ def gridtraveller_on_drugs1(m,n, memo={}):
     elif m==1 and n==1:
         return 1
 
-    memo[(m, n)]= gridtraveller_on_drugs1(m-1, n, memo)+gridtraveller_on_drugs1(m, n-1, memo)
+    memo[(m, n)]= gridtraveller_on_drugs(m-1, n, memo)+gridtraveller_on_drugs(m, n-1, memo)
     return memo[(m, n)]
 
-print(gridtraveller_on_drugs1(18,18))
+print(gridtraveller_on_drugs(18,18))
